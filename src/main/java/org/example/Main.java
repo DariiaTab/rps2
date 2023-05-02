@@ -1,9 +1,55 @@
 package org.example;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");}}
+
+        System.out.println("Welcome to the ROCK PAPER SCISSORRS Tournament!");
+        int userChoice, computerChoice, rock, paper, scissors;
+
+        Scanner input = new Scanner(System.in);
+
+        Random rnd = new Random();
+
+        rock = 0;
+        paper = 1;
+        scissors = 2;
+        System.out.println("Enter your choice (0=rock, 1=paper, 2=scissors)");
+        userChoice = input.nextInt();
+        computerChoice = rnd.nextInt(3);
+        if (computerChoice == rock) {
+            System.out.println("Computer chose ROCK");
+        } else {
+            if (computerChoice == paper) {
+                System.out.println("Computer chose PAPER");
+            } else {
+                System.out.println("Computer chose SCISSORS");
+            }
+        }
+        if (computerChoice == rock) {
+            if (userChoice == paper) {
+                System.out.println("User wins!");
+
+            } else {
+                System.out.println("Computer Wins");
+            }
+        } else if (computerChoice == paper) {
+            if (userChoice == rock) {
+                System.out.println("Computer wins");
+            } else {
+                System.out.println("User Wins!");
+            }
+        } else if (userChoice == rock) {
+            System.out.println("User Wins");
+        } else {
+            System.out.println("Computer Wins");
+        } if (userChoice == computerChoice) {
+        System.out.println("Draw, try again!");
+    }
+
+    }
+}
